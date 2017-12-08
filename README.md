@@ -22,11 +22,17 @@ Feel free to use any front end libraries/tools that you would like, but make sur
 
 ![Real Estate Listing Widget](comp.png)
 
-### The App component holds the app bar, the three sorting buttons (price, beds, sq. ft)
+### The App component holds the app bar and the buttons component (price, beds, sq. ft)
+* on page load App will render a GridList with 2 columns of 4 GridTiles each, one column will be tiles with data from Zillow and the other column will be tiles with data from Trulia.
+* each button has identifying props and handleClick functionality
+* each button will have props and initial state will be set to false
+  * onClick of one button we set the State to true for that button but keep the other two false
+  * onClick render a new view, with the tiles sorted by the property of the button clicked on
 
-* each button is a component (price-button, beds-button, size-button)
-* each button has handleClick functionality
-  * onClick we set the State
-  * onClick render a new view, with the tiles sorted by the property clicked on
+### The Buttons component is a component that handles the sorting functionality and clicking of each button
+* each button has visible: true and clicked: false by default, so that on page load each button is visible but has not yet been clicked on
+* the buttons component will have a handleClick function that sets the State onClick depending on the button clicked.
 
-### The 
+### The GridList component will receive props from the Buttons component
+* depending on the props received (which depends on the button that gets clicked on), the GridList component will render a GridList with sorted GridTiles that are organized and sorted by the property of the button clicked on.
+* if the price button is clicked on, the handleClick function will set the State of the price to true
