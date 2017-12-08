@@ -8,37 +8,39 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataSet: data,
+      dataSet: null,
     };
+    this.handleParse = this.handleParse.bind(this);
     this.handlePriceSort = this.handlePriceSort.bind(this);
     this.handleBedSort = this.handleBedSort.bind(this);
     this.handleSizeSort = this.handleSizeSort.bind(this);
   }
 
-  handlePriceSort(houses) {
-    const parsedPrice = houses.map((i) => {
+  componentWillMount() {
+    this.handleParse(data);
+  }
+
+  handleParse(houses) {
+    const parsedValues = houses.map((i) => {
       i.price = parseInt(i.price, 10);
+      i.beds = parseInt(i.beds, 10);
+      i.sqft ? i.sqft = parseInt(i.sqft, 10) : i.sqft = 0;
       return i;
     });
-    const sortedPrice = parsedPrice.sort((a, b) => a.price - b.price);
+    this.setState({ dataSet: parsedValues });
+  }
+  handlePriceSort(houses) {
+    const sortedPrice = houses.sort((a, b) => a.price - b.price);
     this.setState({ dataSet: sortedPrice });
   }
 
   handleBedSort(houses) {
-    const parsedBeds = houses.map((i) => {
-      i.beds = parseInt(i.beds, 10);
-      return i;
-    });
-    const sortedBeds = parsedBeds.sort((a, b) => a.beds - b.beds);
+    const sortedBeds = houses.sort((a, b) => a.beds - b.beds);
     this.setState({ dataSet: sortedBeds });
   }
 
   handleSizeSort(houses) {
-    const parsedSize = houses.map((i) => {
-      i.sqft = parseInt(i.sqft, 10);
-      return i;
-    });
-    const sortedSize = parsedSize.sort((a, b) => a.sqft - b.sqft);
+    const sortedSize = houses.sort((a, b) => a.sqft - b.sqft);
     this.setState({ dataSet: sortedSize });
   }
 
@@ -46,6 +48,7 @@ class NavBar extends React.Component {
     const style = {
       margin: 12,
     };
+    console.log('dataSet___STATE', this.state.dataSet);
     return (
       <div className="sorting-buttons">
         <RaisedButton
