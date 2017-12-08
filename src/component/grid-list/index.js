@@ -1,7 +1,7 @@
 import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
-import data from '../../lib/data';
-import { handleSort } from '../nav-bar';
+// import data from '../../lib/data';
+import { handleData } from '../nav-bar';
 
 class GridListContainer extends React.Component {
   constructor(props) {
@@ -27,22 +27,24 @@ class GridListContainer extends React.Component {
         height: 200,
       },
     };
-
+    console.log('dataSet', this.props.dataSet)
     return (
       <div className="grid-list-container" style={style.root}>
         <GridList
+          data={this.props.dataSet}
           cellHeight={180}
           cols={2}
           style={style.gridList}
-          onClick={this.state.handleSort}
         >
-          {data.map(tile => {
+          {this.props.data.map((tile, i) => {
             return (
               <GridTile
+                key={i}
                 cols={4}
                 rows={1.5}
                 style={style.gridTile}
-                title={tile.address}
+                title={tile.price}
+                subtitle={tile.sqft}
               />
             );
           })}
