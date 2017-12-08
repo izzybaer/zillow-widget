@@ -1,4 +1,4 @@
-const zillowData = [
+const data = [
   {
     address: '7791 Luther Way, Knoxville, TN 37918',
     price: '549999',
@@ -39,6 +39,42 @@ const zillowData = [
     thumb: 'http://fillmurray.com/300/300',
     url: 'http://zillow.com',
   },
+  {
+    address: '1806 E. Wayne Lane, Fort Dodge, IA 50501',
+    cost: '849,950',
+    beds: '5',
+    baths: '3',
+    sq_ft: '4050',
+    img: 'http://stevensegallery.com/200/200',
+    url: 'http://trulia.com',
+  },
+  {
+    address: '1774 Kapow Drive, Hyattsville, MD 20782',
+    cost: '419,950',
+    beds: '3',
+    baths: '2',
+    sq_ft: '1700',
+    img: 'http://stevensegallery.com/300/300',
+    url: 'http://trulia.com',
+  },
+  {
+    address: '773 Duhnuhnuhna Street, Essex, MD 21221',
+    cost: '524,999',
+    beds: '3',
+    baths: '2',
+    sq_ft: '1980',
+    img: 'http://stevensegallery.com/350/350',
+    url: 'http://trulia.com',
+  },
+  {
+    address: '178 Pennyworth Avenue, Depew, NY 14043',
+    cost: '619,999',
+    beds: '4',
+    baths: '1.5',
+    sq_ft: '2100',
+    img: 'http://stevensegallery.com/400/400',
+    url: 'http://trulia.com',
+  },
 ];
 
-export default zillowData;
+export default data;

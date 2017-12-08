@@ -5,7 +5,6 @@ const UglifyPlugin = require('uglifyjs-webpack-plugin');
 const ExtractPlugin = require('extract-text-webpack-plugin');
 const { DefinePlugin, EnvironmentPlugin } = require('webpack');
 
-
 const production = process.env.NODE_ENV === 'production';
 
 let plugins = [

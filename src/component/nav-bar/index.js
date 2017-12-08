@@ -1,7 +1,8 @@
 import React from 'react';
-import { GridTile, GridList } from 'material-ui/GridList';
+import { GridTile } from 'material-ui/GridList';
 import RaisedButton from 'material-ui/RaisedButton';
-import data from '../../lib/zillow'
+import data from '../../lib/data';
+import GridListContainer from '../grid-list';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -9,16 +10,14 @@ class NavBar extends React.Component {
     this.handleSort = this.handleSort.bind(this);
   }
 
-  handleSort(e) {
-    e.preventDefault();
+  handleSort() {
     this.setState(prevState => ({ clicked: !prevState.clicked }));
   }
-  // handleClick(i) {
-  //   const tiles = this.state.tiles.slice();
-  //   tiles[i] = 'X';
-  //   this.setState({ tiles: tiles });
-  // }
-
+  // data.sort
+  // sort by price
+  // sort by beds
+  // sort by size
+  // return a new array, map over it and make them into grid tiles
 
   render() {
     const style = {
@@ -29,6 +28,7 @@ class NavBar extends React.Component {
         <RaisedButton
           label="Price"
           style={style}
+          onClick={this.handleSort}
         />
         <RaisedButton
           label="Beds"
@@ -37,6 +37,16 @@ class NavBar extends React.Component {
         <RaisedButton
           label="Sq. ft"
           style={style}
+        />
+        <GridListContainer
+          onClick={() => {
+            data.map(tile => (
+              <GridTile
+                key={tile}
+                value={data}
+              />
+            ));
+          }}
         />
       </div>
     );

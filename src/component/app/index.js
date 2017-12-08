@@ -27,13 +27,23 @@ class App extends React.Component {
     const muiTheme = getMuiTheme({
       appBar: {
         height: 50,
-        backgroundColor: 'white',
+        color: '#000000',
+        backgroundColor: '#ffffff',
       },
     });
+    const style = {
+      backgroundColor: '#ffffff',
+    };
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div className="app">
-          <AppBar title="superhero widget" />
+          <AppBar
+            style={style}
+            titleStyle={{ backgroundColor: '#ffffff', color: '#000000' }}
+            title="ZILLOW VS TRULIA"
+            iconStyleLeft={{ backgroundColor: '#ffffff', color: '#000000' }}
+            showMenuIconButton={false}
+          />
           <BrowserRouter>
             <main>
               <NavBar />

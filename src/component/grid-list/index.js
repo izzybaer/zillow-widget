@@ -1,9 +1,9 @@
 import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
-import ZillowData from '../lib/zillow';
-import TruliaData from '../lib/trulia';
+import data from '../../lib/data';
+import { handleSort } from '../nav-bar';
 
-class GridList extends React.Component {
+class GridListContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,19 +22,31 @@ class GridList extends React.Component {
         height: '100%',
         overflowY: 'auto',
       },
+      gridTile: {
+        width: 300,
+        height: 200,
+      },
     };
 
-    // const zillowList = {this.props.data}
-    // const truliaList = {}
     return (
-      <div className='grid-list' style={style.root}>
+      <div className="grid-list-container" style={style.root}>
         <GridList
           cellHeight={180}
+          cols={2}
           style={style.gridList}
-          >
-            <ZillowData />
-
-          </GridList>
+          onClick={this.state.handleSort}
+        >
+          {data.map(tile => {
+            return (
+              <GridTile
+                cols={4}
+                rows={1.5}
+                style={style.gridTile}
+                title={tile.address}
+              />
+            );
+          })}
+        </GridList>
 
 
       </div>
@@ -42,4 +54,4 @@ class GridList extends React.Component {
   }
 }
 
-export default GridList;
+export default GridListContainer;
