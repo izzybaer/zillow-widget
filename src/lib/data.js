@@ -7,7 +7,6 @@ const data = [
     sqft: '3000',
     built: '1976',
     img: 'http://fillmurray.com/150/150',
-    url: 'http://zillow.com',
   },
   {
     address: '1774 Kapow Drive, Hyattsville, MD 20782',
@@ -17,7 +16,6 @@ const data = [
     sqft: '1700',
     built: '2001',
     img: 'http://fillmurray.com/200/200',
-    url: 'http://zillow.com',
   },
   {
     address: '3121 5th Street, Gotham, NY 27520',
@@ -27,7 +25,6 @@ const data = [
     sqft: '',
     built: '1948',
     img: 'http://fillmurray.com/250/250',
-    url: 'http://zillow.com',
   },
   {
     address: '178 Pennyworth Avenue, Depew, NY 14043',
@@ -37,7 +34,6 @@ const data = [
     sqft: '2100',
     built: '2014',
     img: 'http://fillmurray.com/300/300',
-    url: 'http://zillow.com',
   },
   {
     address: '1806 E. Wayne Lane, Fort Dodge, IA 50501',
@@ -46,7 +42,6 @@ const data = [
     baths: '3',
     sqft: '4050',
     img: 'http://stevensegallery.com/200/200',
-    url: 'http://trulia.com',
   },
   {
     address: '1774 Kapow Drive, Hyattsville, MD 20782',
@@ -55,7 +50,6 @@ const data = [
     baths: '2',
     sqft: '1700',
     img: 'http://stevensegallery.com/300/300',
-    url: 'http://trulia.com',
   },
   {
     address: '773 Duhnuhnuhna Street, Essex, MD 21221',
@@ -64,7 +58,6 @@ const data = [
     baths: '2',
     sqft: '1980',
     img: 'http://stevensegallery.com/350/350',
-    url: 'http://trulia.com',
   },
   {
     address: '178 Pennyworth Avenue, Depew, NY 14043',
@@ -73,7 +66,6 @@ const data = [
     baths: '1.5',
     sqft: '2100',
     img: 'http://stevensegallery.com/400/400',
-    url: 'http://trulia.com',
   },
 ];
 

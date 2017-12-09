@@ -8,20 +8,7 @@ import NavBar from '../nav-bar';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      priceButton: {
-        clicked: false,
-        visible: true,
-      },
-      bedsButton: {
-        clicked: false,
-        visible: true,
-      },
-      sizeButton: {
-        clicked: false,
-        visible: true,
-      },
-    };
+    this.state = {};
   }
   render() {
     const muiTheme = getMuiTheme({

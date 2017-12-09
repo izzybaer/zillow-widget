@@ -1,5 +1,4 @@
 import React from 'react';
-import { GridTile } from 'material-ui/GridList';
 import RaisedButton from 'material-ui/RaisedButton';
 import data from '../../lib/data';
 import GridListContainer from '../grid-list';
@@ -22,7 +21,8 @@ class NavBar extends React.Component {
 
   handleParse(houses) {
     const parsedValues = houses.map((i) => {
-      i.price = parseInt(i.price, 10);
+      i.price = parseInt(i.price, 10).toLocaleString();
+      i.price = `$${i.price}`;
       i.beds = parseInt(i.beds, 10);
       i.sqft ? i.sqft = parseInt(i.sqft, 10) : i.sqft = 0;
       return i;
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
     const style = {
       margin: 12,
     };
-    console.log('dataSet___STATE', this.state.dataSet);
+
     return (
       <div className="sorting-buttons">
         <RaisedButton
